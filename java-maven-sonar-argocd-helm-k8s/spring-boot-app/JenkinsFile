@@ -4,9 +4,9 @@ pipeline {
          HTTPS_PROXY = 'http://10.10.2.150:3128' // Replace with your proxy address NO_PROXY = 'localhost,127.0.0.1' // Add any addresses to bypass the proxy if needed 
   }
   agent {
-//     any {
-    docker {
-     image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
+     any {
+//    docker {
+//     image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
 //      args '--user root -v /var/run/docker.sock:/var/run/docker.sock  --env HTTP_PROXY=“http://10.10.2.150:3128" --env HTTPS_PROXY=“https://10.10.2.150:3128"' // mount Docker socket to access the host's Docker daemon
     }
   }
