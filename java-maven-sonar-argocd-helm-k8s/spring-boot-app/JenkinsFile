@@ -6,6 +6,7 @@ pipeline {
   agent {
      node {
 //        label 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
+// image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-maven:latest
        label 'maven'
 //    docker { 
 //     image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
