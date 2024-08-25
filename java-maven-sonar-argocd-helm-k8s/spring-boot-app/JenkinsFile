@@ -5,7 +5,7 @@ pipeline {
 //  }
   agent {
      node {
-        docker.io/tanupj/maven-abhishek-docker-agent:v1
+        image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
 //        label 'maven'
 //    docker { 
 //     image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
