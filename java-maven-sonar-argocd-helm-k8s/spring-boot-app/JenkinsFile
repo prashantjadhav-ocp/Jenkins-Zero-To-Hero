@@ -5,7 +5,8 @@ pipeline {
 //  }
   agent {
      node {
-        label 'maven'
+        docker.io/tanupj/maven-abhishek-docker-agent:v1
+//        label 'maven'
 //    docker { 
 //     image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
 //      args '--user root -v /var/run/docker.sock:/var/run/docker.sock  --env HTTP_PROXY=“http://10.10.2.150:3128" --env HTTPS_PROXY=“https://10.10.2.150:3128"' // mount Docker socket to access the host's Docker daemon
