@@ -14,7 +14,6 @@ pipeline {
 //       label 'maven'
 //       containerTemplate 'jnlp'
     docker { 
-      withEnv(["http_proxy=http://10.10.2.150:3128"])
       image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
 //       }
