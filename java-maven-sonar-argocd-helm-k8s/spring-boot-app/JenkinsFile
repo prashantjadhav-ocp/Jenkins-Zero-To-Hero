@@ -1,8 +1,9 @@
 pipeline {
-//     environment { 
-//         HTTP_PROXY = 'http://10.10.2.150:3128' // Replace with your proxy address 
-//        HTTPS_PROXY = 'http://10.10.2.150:3128' // Replace with your proxy address NO_PROXY = 'localhost,127.0.0.1' // Add any addresses to bypass the proxy if needed 
-//  }
+    environment { 
+        HTTP_PROXY = 'http://10.10.2.150:3128' // Replace with your proxy address 
+        HTTPS_PROXY = 'http://10.10.2.150:3128' // Replace with your proxy address 
+        NO_PROXY = 'localhost,127.0.0.1,10.10.2.0/24,.tamayuz.local,127.30.0.1/16' // Add any addresses to bypass the proxy if needed 
+  }
   agent {
  //    kubernetes {
  //        yamlFile 'java-maven-sonar-argocd-helm-k8s/maven.yaml'
