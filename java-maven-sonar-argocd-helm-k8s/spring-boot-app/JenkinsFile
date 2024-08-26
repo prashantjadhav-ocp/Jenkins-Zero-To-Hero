@@ -1,8 +1,8 @@
 pipeline {
     environment { 
-        HTTP_PROXY = 'http://10.10.2.150:3128' // Replace with your proxy address 
-        HTTPS_PROXY = 'http://10.10.2.150:3128' // Replace with your proxy address 
-        NO_PROXY = 'localhost,127.0.0.1,10.10.2.0/24,.tamayuz.local,127.30.0.1/16' // Add any addresses to bypass the proxy if needed 
+        http_proxy = 'http://10.10.2.150:3128' // Replace with your proxy address 
+        https_proxy = 'http://10.10.2.150:3128' // Replace with your proxy address 
+        no_proxy = 'localhost,127.0.0.1,10.10.2.0/24,.tamayuz.local,127.30.0.1/16' // Add any addresses to bypass the proxy if needed 
   }
   agent {
  //    kubernetes {
