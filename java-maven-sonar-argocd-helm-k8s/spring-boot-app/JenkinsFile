@@ -5,17 +5,25 @@ pipeline {
         no_proxy = 'localhost,127.0.0.1,10.10.2.0/24,.tamayuz.local,127.30.0.1/16' // Add any addresses to bypass the proxy if needed 
   }
   agent {
- //    kubernetes {
- //        yamlFile 'java-maven-sonar-argocd-helm-k8s/maven.yaml'
+     kubernetes {
+         yaml '''
+           apiVersion: v1
+           kind: Pod
+           spec:
+              containers:
+              - name: maven
+                image: docker.io/tanupj/maven-abhishek-docker-agent:v1
+           ''' 
+         //yamlFile 'java-maven-sonar-argocd-helm-k8s/maven.yaml'
 //           podTemplate {
 //                 node (maven-2)
 //          label 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
 // image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-maven:latest
 //       label 'maven'
 //       containerTemplate 'jnlp'
-    docker { 
-      image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
-      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+//    docker { 
+//      image 'docker.io/tanupj/maven-abhishek-docker-agent:v1'
+//      args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
 //       }
     }
   }
